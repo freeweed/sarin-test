@@ -6,36 +6,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity // This tells Hibernate to make a table out of this class
-public class User {
+public class Branch {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Integer id;
-
-	private String name;
-
-	private String email;
+	private Integer branch_id;
+    private String branch_name;
 
 	public Integer getId() {
-		return id;
+		return branch_id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setId(Integer branch_id) {
+		this.branch_id = branch_id;
 	}
 
 	public String getName() {
-		return name;
+		return branch_name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
+	public void setName(String branch_name) {
+		this.branch_name = branch_name;
+    }
 }
