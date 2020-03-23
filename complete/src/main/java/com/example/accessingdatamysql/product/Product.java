@@ -11,7 +11,8 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer product_id;
     private String product_name;
-    private String product_detail;
+	private String product_detail;
+	private Integer product_price;
 
 	public Integer getId() {
 		return product_id;
@@ -35,5 +36,13 @@ public class Product {
 
 	public void setDetail(String product_detail) {
 		this.product_detail = product_detail;
+	}
+
+	public Integer getProductPrice() {
+		return product_price;
+	}
+
+	public void setProductPrice(Integer product_price) {
+		this.product_price = product_price;
 	}
 }

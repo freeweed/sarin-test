@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 23, 2020 at 09:40 AM
+-- Generation Time: Mar 23, 2020 at 03:35 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.3
 
@@ -56,7 +56,7 @@ CREATE TABLE `hibernate_sequence` (
 --
 
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-(18);
+(20);
 
 -- --------------------------------------------------------
 
@@ -67,16 +67,18 @@ INSERT INTO `hibernate_sequence` (`next_val`) VALUES
 CREATE TABLE `product` (
   `product_id` int(4) NOT NULL,
   `product_name` varchar(255) NOT NULL,
-  `product_detail` text NOT NULL
+  `product_detail` text NOT NULL,
+  `product_price` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`product_id`, `product_name`, `product_detail`) VALUES
-(10, 'รองเท้า', 'ยี่ห้อ converse'),
-(11, 'เสื้อ', 'cps');
+INSERT INTO `product` (`product_id`, `product_name`, `product_detail`, `product_price`) VALUES
+(10, 'รองเท้า', 'ยี่ห้อ converse', 100),
+(11, 'เสื้อ', 'cps', 200),
+(18, 'กางเกง', 'ทดสอบบบบบบบ', 50);
 
 -- --------------------------------------------------------
 
@@ -97,7 +99,8 @@ CREATE TABLE `product_branch` (
 
 INSERT INTO `product_branch` (`pb_id`, `pb_branch_id`, `pb_product_id`, `pb_stock`) VALUES
 (1, 12, 10, 100),
-(2, 12, 11, 50);
+(2, 12, 11, 50),
+(19, 15, 18, 100);
 
 -- --------------------------------------------------------
 
@@ -159,13 +162,13 @@ ALTER TABLE `branch`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `product_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `product_branch`
 --
 ALTER TABLE `product_branch`
-  MODIFY `pb_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `pb_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `user`

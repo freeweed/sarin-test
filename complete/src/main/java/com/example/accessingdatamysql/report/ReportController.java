@@ -60,6 +60,7 @@ public class ReportController {
                 
                 Product product = this.productRepository.findById(product_id).get();
                 String product_name = product.getName();
+                Integer product_price = product.getProductPrice();
                 
                 
                 JSONObject obj = new JSONObject();
@@ -69,6 +70,7 @@ public class ReportController {
                 obj.put("product_id",product_id);
                 obj.put("product_name",product_name);
                 obj.put("pb_stock",pb_stock);
+                obj.put("product_price",product_price);
                 jArr.put(obj);
             }    
             result = jArr.toString();

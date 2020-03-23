@@ -59,6 +59,7 @@ public class ProductController {
 		JSONObject jsonObj = new JSONObject(json);
 		product.setName(jsonObj.getString("product_name"));
 		product.setDetail(jsonObj.getString("product_detail"));
+		product.setProductPrice(jsonObj.getInt("product_price"));
 		return product;
 	}
 }
